@@ -23,15 +23,15 @@ class GestureFlipCard extends StatefulWidget {
 
   /// [animationDuration] The amount of milliseconds a turn animation will take.
   final Duration animationDuration;
-  const GestureFlipCard(
-      {Key? key,
-      required this.frontWidget,
-      required this.backWidget,
-      this.enableController = false,
-      this.controller,
-      this.axis = FlipAxis.vertical,
-      this.animationDuration = const Duration(milliseconds: 800)})
-      : super(key: key);
+  const GestureFlipCard({
+    Key? key,
+    required this.frontWidget,
+    required this.backWidget,
+    this.enableController = false,
+    this.controller,
+    this.axis = FlipAxis.vertical,
+    this.animationDuration = const Duration(milliseconds: 800),
+  }) : super(key: key);
 
   @override
   FlipCardState1 createState() => FlipCardState1();
@@ -67,8 +67,8 @@ class FlipCardState1 extends State<GestureFlipCard>
 
   @override
   void dispose() {
-    super.dispose();
     animationController.dispose();
+    super.dispose();
   }
 
   void strt() {
